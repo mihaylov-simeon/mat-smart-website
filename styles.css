@@ -467,6 +467,40 @@
   }
 }
 
+@media screen and (max-width: 717px) {
+  .main__img--container {
+    display: flex;
+    justify-content: center;
+  }
+  .main__img--card {
+    width: 250px;
+    height: 250px;
+  }
+
+  .main__img--card i {
+    font-size: 10rem;
+  }
+
+  .main__content h1 {
+    font-size: 1.7rem;
+    margin-top: 2rem;
+  }
+  .main__content h2 {
+    font-size: 2rem;
+  }
+
+  .main__content p {
+    margin-top: 2rem;
+  }
+
+  .main__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+}
+
 /* Animations */
 
 @keyframes fadeIn {
