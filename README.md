@@ -3,7 +3,7 @@
 This is a website project created for MAT-SMART Engineering, a company specializing in electricity, electronics, smart technologies, and related services. The website serves as an online platform to showcase the company's expertise, services, and portfolio.
 
 Table of Contents
-[Link 1] About the Project
+[About the Project]
 Features
 Built With
 Getting Started
@@ -11,7 +11,7 @@ Usage
 Contributing
 License
 Contact
-[Link 1] About the Project
+[About the Project]
 The Company Website for MAT-SMART Engineering aims to provide a professional and informative online presence for the company. It is designed to attract potential clients, educate visitors about the company's offerings, and encourage them to engage with the company.
 
 Features
