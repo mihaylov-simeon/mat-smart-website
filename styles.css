@@ -176,9 +176,11 @@
     padding: 2rem;
     width: 100%;
     display: table;
+
   }
 
   .navbar__btn {
+    margin-top: 30px;
     padding-bottom: 2rem;
   }
 
@@ -431,15 +433,18 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 860px) {
+  .main__img--container {
+    display: flex;
+    justify-content: center;
+  }
   .main__img--card {
     width: 250px;
     height: 250px;
   }
 
-  .fa-users,
-  .fa-layer-group {
-    font-size: 4rem;
+  .main__img--card i {
+    font-size: 10rem;
   }
 
   .main__content h1 {
@@ -455,8 +460,10 @@
   }
 
   .main__btn {
-    padding: 12px 36px;
-    margin: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
   }
 }
 
