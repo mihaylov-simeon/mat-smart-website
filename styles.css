@@ -267,6 +267,11 @@
   font-weight: bold;
 }
 
+.highlight {
+  border-bottom: 3px solid #ff6200;
+  padding: 0 0 10px 0;
+}
+
 @media screen and (max-width: 768px) {
   .hero__heading {
     font-size: 60px;
