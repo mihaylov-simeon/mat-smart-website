@@ -1,6 +1,6 @@
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
-const navLogo = document.querySelector('#navbar__logo');
+const navLogo = document.querySelector('#company-logo');
 
 // Display Mobile Menu
 
@@ -69,12 +69,14 @@ const hightlightMenu = () => {
   // Close mobile menu when clicking on a menu item
 
   const hideMenu = () => {
-    const menuBars = document.querySelector('.is-active');
-    if (window.innerWidth <= 760 && menuBars) {
-      menu.classList.toggle('is-active')
+    if (window.innerWidth < 960) {
+      menu.classList.remove('is-active');
       menuLinks.classList.remove('active');
     }
   };
-
-  menuLinks.addEventListener('click', hideMenu);
-  navLogo.addEventListener('click', hideMenu);
+  
+  const menuItems = document.querySelectorAll('.navbar__links');
+  menuItems.forEach(item => {
+    item.addEventListener('click', hideMenu);
+  });
+  
