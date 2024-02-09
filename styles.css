@@ -222,7 +222,7 @@
 
 .hero {
   background: linear-gradient(to right, #323232, #000000);
-  padding: 200px 0;
+  padding: 100px 0;
 }
 
 .hero__container {
@@ -685,8 +685,6 @@
     grid-template-columns: 1fr;
   }
 }
-
-
 
 /* Animations */
 
