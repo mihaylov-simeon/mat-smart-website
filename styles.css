@@ -298,7 +298,7 @@
   flex: 1;
   max-width: 50%;
   padding-right: 20px;
-  animation: slideInLeft 1s ease-out; /* Apply slide-in animation */
+  animation: slideInLeft 1s ease-out;
 }
 
 .main__content h1 {
@@ -499,6 +499,83 @@
     margin-bottom: 50px;
   }
 }
+
+/* Services Section */
+
+.services {
+  background: #131313;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 80px 30px;
+}
+
+.services h1 {
+  color: #ff6200;
+  margin-bottom: 30px;
+}
+
+.services__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+}
+
+.services__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid #3c3c3c;
+  border-radius: 10px;
+  transition: 1s;
+  padding: 30px;
+}
+
+.services__card:hover {
+  background-color: #1c1c1c;
+  transition: 0.5s;
+}
+
+.services__btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  background: #ff6200;
+  background: -webkit-linear-gradient(to right, #ff6200, #fd1d1d);
+  background: linear-gradient(to right, #ff6200, #fd1d1d);
+  color: #fff;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 30px auto;
+  animation: pulse 2s infinite;
+}
+
+.services__btn button:hover {
+  background: #fff;
+  color: #000000;
+}
+
+.services h2 {
+  color: #bbbbbb;
+  margin-bottom: 30px;
+}
+
+.services p {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+
 
 /* Animations */
 
