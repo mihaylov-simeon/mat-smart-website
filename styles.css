@@ -547,6 +547,7 @@
 
 .services__card:hover {
   background-color: #1c1c1c;
+  transform: scale(1.05);
   transition: 0.5s;
 }
 
