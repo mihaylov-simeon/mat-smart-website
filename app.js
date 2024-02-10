@@ -1,6 +1,7 @@
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#company-logo');
+const topBtn = document.querySelector('#topBtn')
 
 // Display Mobile Menu
 const mobileMenu = () => {
@@ -10,15 +11,6 @@ const mobileMenu = () => {
 
 menu.addEventListener('click', mobileMenu);
 
-// Scroll Tracker
-const scrollBarTracker = () => {
-  const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  document.getElementById("my__bar").style.width = `${scrolled}%`;
-};
-
-window.addEventListener('scroll', scrollBarTracker);
 
 // Show active menu when scrolling
 const highlightMenu = () => {
@@ -63,3 +55,53 @@ const menuItems = document.querySelectorAll('.navbar__links');
 menuItems.forEach(item => {
   item.addEventListener('click', hideMenu);
 });
+
+
+// Ecplore our services button clickable
+document.addEventListener('DOMContentLoaded', function() {
+  const exploreServicesBtn = document.querySelector('.main__btn');
+
+  exploreServicesBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = '#services';
+  });
+});
+
+// ================================== SCROLL FUNCTIONS ==================================
+
+// Scroll Tracker
+const scrollBarTracker = () => {
+  const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById("my__bar").style.width = `${scrolled}%`;
+};
+
+window.addEventListener('scroll', scrollBarTracker);
+
+// When the user scrolls down 1500px from the top of the document, show the button
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 1500 ||
+    document.documentElement.scrollTop > 1500
+  ) {
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+}
+
+// Back to top function
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+// call functions on scroll
+window.onscroll = function () {
+  scrollFunction();
+  scrollBarTracker();
+};
+
+
+
