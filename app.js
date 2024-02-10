@@ -81,10 +81,7 @@ window.addEventListener('scroll', scrollBarTracker);
 
 // When the user scrolls down 1500px from the top of the document, show the button
 function scrollFunction() {
-  if (
-    document.body.scrollTop > 1700 ||
-    document.documentElement.scrollTop > 1700
-  ) {
+  if (document.body.scrollTop > 1700 || document.documentElement.scrollTop > 1700) {
     topBtn.style.display = "block";
   } else {
     topBtn.style.display = "none";
