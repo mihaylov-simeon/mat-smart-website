@@ -29,18 +29,6 @@
   padding: 0 50px;
 }
 
-/* #navbar__logo {
-  color: #008F11;
-  background-size: 100%;
-  background-clip: text;
-  -moz-background-clip: text;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-} */
-
 .navbar__menu {
   display: flex;
   align-items: center;
