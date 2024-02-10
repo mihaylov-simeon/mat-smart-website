@@ -29,16 +29,16 @@ const highlightMenu = () => {
   const servicesMenu = document.querySelector('#services-page');
   const portfolioMenu = document.querySelector('#portfolio-page');
 
-  if (window.innerWidth > 960 && scrollPosition < 600) {
+  if (window.innerWidth > 960 && scrollPosition < 500) {
     homeMenu.classList.add('highlight');
     [aboutMenu, servicesMenu, portfolioMenu].forEach(item => item.classList.remove('highlight'));
-  } else if (window.innerWidth > 960 && scrollPosition < 1400) {
+  } else if (window.innerWidth > 960 && scrollPosition < 1200) {
     aboutMenu.classList.add('highlight');
     [homeMenu, servicesMenu, portfolioMenu].forEach(item => item.classList.remove('highlight'));
-  } else if (window.innerWidth > 960 && scrollPosition < 2345) {
+  } else if (window.innerWidth > 960 && scrollPosition < 2000) {
     servicesMenu.classList.add('highlight');
     [homeMenu, aboutMenu, portfolioMenu].forEach(item => item.classList.remove('highlight'));
-  } else if (window.innerWidth > 960 && scrollPosition < 3100) {
+  } else if (window.innerWidth > 960 && scrollPosition < 2500) {
     portfolioMenu.classList.add('highlight');
     [homeMenu, aboutMenu, servicesMenu].forEach(item => item.classList.remove('highlight'));
   } else {
