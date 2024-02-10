@@ -60,6 +60,10 @@
   text-decoration: none;
   height: 100%;
   transition: all 0.3s ease;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  display: table;
 }
 
 .navbar__btn {
@@ -163,14 +167,6 @@
   .navbar__item {
     width: 100%;
   }
-
-  /* .navbar__links {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-    color: #000000;
-  } */
 
   .navbar__btn {
     margin-top: 30px;
