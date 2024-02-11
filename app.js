@@ -1,7 +1,20 @@
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#company-logo');
-const topBtn = document.querySelector('#topBtn')
+const topBtn = document.querySelector('#topBtn');
+
+// Disable right-clicking and dragging
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+document.addEventListener('dragstart', function(e) {
+  e.preventDefault();
+});
+
+document.addEventListener('selectstart', function(e) {
+  e.preventDefault();
+});
 
 // Display Mobile Menu
 const mobileMenu = () => {
@@ -10,7 +23,6 @@ const mobileMenu = () => {
 };
 
 menu.addEventListener('click', mobileMenu);
-
 
 // Show active menu when scrolling
 const highlightMenu = () => {
@@ -57,13 +69,15 @@ menuItems.forEach(item => {
 });
 
 
-// Ecplore our services button clickable
+// Explore our services button clickable
 document.addEventListener('DOMContentLoaded', function() {
   const exploreServicesBtn = document.querySelector('.main__btn');
 
   exploreServicesBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    window.location.href = '#services';
+    // Validate and sanitize URL input before setting it
+    const url = '#services';
+    window.location.href = url;
   });
 });
 
@@ -99,6 +113,3 @@ window.onscroll = function () {
   scrollFunction();
   scrollBarTracker();
 };
-
-
-

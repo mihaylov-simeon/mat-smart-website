@@ -7,6 +7,7 @@
   <title>Mat Smart</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">
 </head>
 
 <body>
@@ -20,19 +21,19 @@
       </div>
       <ul class="navbar__menu">
         <li class="navbar__item">
-          <a href="#home" class="navbar__links" id="home-page">Home</a>
+          <a href="#home" class="navbar__links" id="home-page">Начало</a>
         </li>
         <li class="navbar__item">
-          <a href="#about" class="navbar__links" id="about-page">About</a>
+          <a href="#about" class="navbar__links" id="about-page">За Нас</a>
         </li>
         <li class="navbar__item">
-          <a href="#services" class="navbar__links" id="services-page">Services</a>
+          <a href="#services" class="navbar__links" id="services-page">Услуги</a>
         </li>
         <li class="navbar__item">
-          <a href="#partners" class="navbar__links" id="partners-page">Partners</a>
+          <a href="#partners" class="navbar__links" id="partners-page">Партньори</a>
         </li>
         <li class="navbar__btn">
-          <a href="#contact-us" class="button" id="signup">Contact us</a>
+          <a href="#contact-us" class="button" id="signup">Контакти</a>
         </li>
       </ul>
     </div>
@@ -45,10 +46,10 @@
   <!-- Hero Section -->
   <div class="hero" id="home">
     <div class="hero__container">
-      <h1 class="hero__heading"><span id="hero-heading-text-part">Engineering</span> that works!</h1>
-      <p class="hero__description">Unlimited Possibilities</p>
+      <h1 class="hero__heading"><span id="hero-heading-text-part">Инженерство</span>, което работи!</h1>
+      <p class="hero__description">Неограничени възможности</p>
       <button class="main__btn">
-        <a href="#services">Explore our services</a>
+        <a href="#services">Нашите услуги</a>
       </button>
     </div>
   </div>
@@ -57,11 +58,13 @@
   <div class="main" id="about">
     <div class="main__container">
       <div class="main__content">
-        <h1>What do we do?</h1>
-        <h2>You imagine, we engineer it!</h2>
-        <p>Schedule a call or send us an email to learn more about our services!</p>
+        <h1>Каква е нашата дейност?</h1>
+        <h2>Вие си представяте, ние проектираме!</h2>
+        <p>Обадете ни се или ни пишете през нашата контактна форма, за да разкажете повече за
+          идеите си и да научите повече за услугите ни!
+        </p>
         <button class="main__btn">
-          <a href="#">Contact us</a>
+          <a href="#">Свържете се с нас</a>
         </button>
       </div>
       <div class="main__img--container">
@@ -70,7 +73,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!-- Services Section -->
@@ -202,7 +204,7 @@
         <div class="footer__logo">
           <img src="MAT-SMART_Logo--green.svg" id="footer__logo" alt="footer-logo">
         </div>
-        <p class="website__rights">© MAT SMART 2024. All rights reserved.</p>
+        <p class="website__rights">© DEV CORNER 2024. All rights reserved.</p>
         <div class="social__icons">
           <a href="/" class="social__icon--link" target="_blank"
             ><i class="fab fa-facebook"></i
