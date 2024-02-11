@@ -635,6 +635,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 30px;
+  max-width: 80%;
 }
 
 .services__card {
