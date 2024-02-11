@@ -68,7 +68,6 @@ menuItems.forEach(item => {
   item.addEventListener('click', hideMenu);
 });
 
-
 // Explore our services button clickable
 document.addEventListener('DOMContentLoaded', function() {
   const exploreServicesBtn = document.querySelector('.main__btn');
@@ -104,9 +103,15 @@ function scrollFunction() {
 
 // Back to top function
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  // Smoothly scroll to the top of the document
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
+
+// Add click event listener to topBtn
+topBtn.addEventListener('click', topFunction);
 
 // call functions on scroll
 window.onscroll = function () {

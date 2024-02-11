@@ -764,13 +764,13 @@
   padding: 10px;
   border-radius: 10px;
   font-size: 15px;
-  scroll-behavior: smooth;
 }
 
 #topBtn:hover {
     background-color: #000000;
     color: #fff;
 }
+
 
 .footer__container {
   background: linear-gradient(to right, #ffffff, #e8e8e8);
