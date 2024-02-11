@@ -19,19 +19,19 @@ const highlightMenu = () => {
   const homeMenu = document.querySelector('#home-page');
   const aboutMenu = document.querySelector('#about-page');
   const servicesMenu = document.querySelector('#services-page');
-  const portfolioMenu = document.querySelector('#portfolio-page');
+  const partnersMenu = document.querySelector('#partners-page');
 
   if (window.innerWidth > 960 && scrollPosition < 500) {
     homeMenu.classList.add('highlight');
-    [aboutMenu, servicesMenu, portfolioMenu].forEach(item => item.classList.remove('highlight'));
+    [aboutMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
   } else if (window.innerWidth > 960 && scrollPosition < 1200) {
     aboutMenu.classList.add('highlight');
-    [homeMenu, servicesMenu, portfolioMenu].forEach(item => item.classList.remove('highlight'));
+    [homeMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
   } else if (window.innerWidth > 960 && scrollPosition < 2000) {
     servicesMenu.classList.add('highlight');
-    [homeMenu, aboutMenu, portfolioMenu].forEach(item => item.classList.remove('highlight'));
+    [homeMenu, aboutMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
   } else if (window.innerWidth > 960 && scrollPosition < 2500) {
-    portfolioMenu.classList.add('highlight');
+    partnersMenu.classList.add('highlight');
     [homeMenu, aboutMenu, servicesMenu].forEach(item => item.classList.remove('highlight'));
   } else {
     if (element && window.innerWidth < 960 && scrollPosition < 600) {
