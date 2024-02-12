@@ -747,6 +747,11 @@
 
 /* Testimonials Section */
 
+.testimonials .container{
+  background: linear-gradient(to right, #ffffff, #e8e8e8);
+  padding-top: 3rem;
+}
+
 .shadow-effect {
   background: #fff;
   padding: 20px;
