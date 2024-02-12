@@ -288,8 +288,6 @@
   }
 }
 
-
-
 /* About Section */
 
 .main {
@@ -826,6 +824,13 @@ display: inline-block;
   transform-origin: 50% 50% 0;
   transition: all 250ms ease-out 0s;
   width: 20px;
+}
+
+.testimonials .container h1 {
+  font-size: 2rem;
+  color: #008F11;
+  font-weight: bold;
+  text-align: center;
 }
 
 
