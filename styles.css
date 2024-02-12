@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -745,98 +747,165 @@
   }
 }
 
-/* Testimonials Section */
+/* Contact Section */
 
-.testimonials .container{
+.contact_form_div {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
   background: linear-gradient(to right, #ffffff, #e8e8e8);
-  padding-top: 3rem;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  color: #444;
 }
 
-.shadow-effect {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  border: 1px solid #ECECEC;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.10), 0 10px 10px rgba(0,0,0,0.02);
+.contact_form_container {
+  position: relative;
+  padding: 7vw;
+  max-width: 1100px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px #0002, 0 5px 15px #0002, 0 5px 25px #0002;
+  border-radius: 15px;
 }
 
-#customers-testimonials .shadow-effect p {
-  font-family: inherit;
-  font-size: 17px;
-  line-height: 1.5;
-  margin: 0 0 17px 0;
-  font-weight: 300;
+.contact_form_container .heading {
+  text-transform: uppercase;
+  color: #008F11;
+  font-size: 1.5rem;
 }
 
-.testimonial-name {
-  margin: -17px auto 0;
-  display: table;
-  width: auto;
+.contact_form_container .main_content {
+  display: flex;
+  flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+  justify-content: space-between; /* Add space between elements */
+}
+
+@media all and (min-width: 810px) {
+  .contact_form_container .main_content {
+      display: grid;
+      grid-template-columns: 1fr minmax(200px, 300px);
+      gap: 50px;
+      align-items: center;
+  }
+}
+
+
+/* left part start */
+
+.contact_form_container .main_content .left {
+  flex: 1; /* Take up remaining space */
+  margin-right: 20px; /* Add margin for spacing */
+}
+
+.contact_form_container .main_content .left .form_input_wraper {
+  position: relative;
+  margin-top: 25px;
+}
+
+.contact_form_container .main_content .left .form_input_wraper label {
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+  font-size: 12px;
+  color: #ccc;
+  font-weight: bold;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.contact_form_container .main_content .left .form_input_wraper input,
+.contact_form_container .main_content .left .form_input_wraper textarea {
+  background: transparent;
+  display: block;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  width: 100%;
+  border-bottom: 1px solid #008F11;
+  transition: 0.3s ease-in-out;
+}
+
+.contact_form_container .main_content .left .form_input_wraper input:focus,
+.contact_form_container .main_content .left .form_input_wraper textarea:focus,
+.contact_form_container .main_content .left .form_input_wraper input:valid,
+.contact_form_container .main_content .left .form_input_wraper textarea:valid {
+  border-bottom-color: #008F11;
+}
+
+.contact_form_container .main_content .left .form_input_wraper input:focus+label,
+.contact_form_container .main_content .left .form_input_wraper textarea:focus+label,
+.contact_form_container .main_content .left .form_input_wraper input:valid+label,
+.contact_form_container .main_content .left .form_input_wraper textarea:valid+label {
+  color: #008F11;
+  bottom: 100%;
+}
+
+/* left part end */
+
+
+.contact_form_container .main_content .right {
+  flex: 3;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+.contact_form_container .main_content .right ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.contact_form_container .main_content .right ul li{
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+.contact_form_container .main_content .right ul li .icon{
+  margin-right: 10px;
+  color: #008F11;
+}
+.contact_form_container .main_content .right ul li .text{
+  display: inline-block;
+}
+
+.contact_form_container .main_content .left .submit_button{
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
   background: #008F11;
   background: -webkit-linear-gradient(to right, #008F11, #005a0b);
-  background: linear-gradient(to right, #008F11, #005a0b);  padding: 9px 35px;
-  border-radius: 19px;
-  text-align: center;
+  background: linear-gradient(to right, #008F11, #005a0b);
+  border: none;
+  padding: 10px 50px;
+  font-size: 35px;
   color: #fff;
-  font-weight: bold;
-  box-shadow: 0 9px 18px rgba(0,0,0,0.12), 0 5px 7px rgba(0,0,0,0.05);
-}
-#customers-testimonials .item {
-  text-align: center;
-  padding: 50px;
-  margin-bottom:80px;
-  opacity: .3;
-  -webkit-transform: scale3d(0.8, 0.8, 1);
-  transform: scale3d(0.8, 0.8, 1);
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 2px 5px #0002, 0 5px 15px #0002;
+  border-radius: 10px;
 }
 
-#customers-testimonials .item #testimonials-logo {
-  width: 10rem;
-}
+/* Media Query for smaller screens */
+@media screen and (max-width: 550px) {
+  .contact_form_container .main_content {
+      align-items: center;
+  }
 
-#customers-testimonials .owl-item.active.center .item {
-  opacity: 1;
-  -webkit-transform: scale3d(1.0, 1.0, 1);
-  transform: scale3d(1.0, 1.0, 1);
-}
-.owl-carousel .owl-item img {
-  transform-style: preserve-3d;
-  max-width: 10rem;
-  margin: 0 auto 17px;
-}
-#customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
-#customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
-  background: #008F11;
-  transform: translate3d(0px, -50%, 0px) scale(0.7);
-}
-#customers-testimonials.owl-carousel .owl-dots{
-display: inline-block;
-width: 100%;
-text-align: center;
-}
-#customers-testimonials.owl-carousel .owl-dots .owl-dot{
-display: inline-block;
-}
-#customers-testimonials.owl-carousel .owl-dots .owl-dot span {
-  background: #008F11;
-  display: inline-block;
-  height: 20px;
-  margin: 0 2px 5px;
-  transform: translate3d(0px, -50%, 0px) scale(0.3);
-  transform-origin: 50% 50% 0;
-  transition: all 250ms ease-out 0s;
-  width: 20px;
-}
+  .contact_form_container .main_content .left,
+  .contact_form_container .main_content .right {
+      width: 100%;
+  }
 
-.testimonials .container h1 {
-  font-size: 2rem;
-  color: #008F11;
-  font-weight: bold;
-  text-align: center;
+  .contact_form_container .main_content .left .submit_button {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      margin-top: 20px; /* Add margin to separate button from list */
+      margin-left: auto; /* Align button to the right */
+      margin-right: auto; /* Align button to the right */
+      text-align: center; /* Center align button */
+  }
 }
 
 

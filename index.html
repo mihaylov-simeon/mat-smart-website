@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
 </head>
 
 <body>
@@ -167,71 +169,72 @@
     </div>
   </div>
 
-  <!-- Testimonials Section -->
-<section class="testimonials" id="testimonials">
-	<div class="container">
-    <h1>Отзиви от нашите клиенти</h1>
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="customers-testimonials" class="owl-carousel">
-            <!--TESTIMONIAL 1 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img src="MAT-SMART_Logo--green.svg" id="testimonials-logo" alt="лого на компанията">
-                <p>Тук трябва да има примерен отзив от клиент, описващ дали е доволен или не от услугите на фирмата. 
-                  Под него има името на клиента, оставил отзива, а над него логото на фирмата.</p>
-              </div>
-              <div class="testimonial-name">Мартин Иванов</div>
-            </div>
-            <!--END OF TESTIMONIAL 1 -->
-            <!--TESTIMONIAL 2 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img src="MAT-SMART_Logo--green.svg" id="testimonials-logo" alt="лого на компанията">
-                <p>Тук трябва да има примерен отзив от клиент, описващ дали е доволен или не от услугите на фирмата. 
-                  Под него има името на клиента, оставил отзива, а над него логото на фирмата.</p>
-              </div>
-              <div class="testimonial-name">Мартин Иванов</div>
-            </div>
-            <!--END OF TESTIMONIAL 2 -->
-            <!--TESTIMONIAL 3 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img src="MAT-SMART_Logo--green.svg" id="testimonials-logo" alt="лого на компанията">
-                <p>Тук трябва да има примерен отзив от клиент, описващ дали е доволен или не от услугите на фирмата. 
-                  Под него има името на клиента, оставил отзива, а над него логото на фирмата.</p>
-              </div>
-              <div class="testimonial-name">Мартин Иванов</div>
-            </div>
-            <!--END OF TESTIMONIAL 3 -->
-            <!--TESTIMONIAL 4 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img src="MAT-SMART_Logo--green.svg" id="testimonials-logo" alt="лого на компанията">
-                <p>Тук трябва да има примерен отзив от клиент, описващ дали е доволен или не от услугите на фирмата. 
-                  Под него има името на клиента, оставил отзива, а над него логото на фирмата.</p>
-              </div>
-              <div class="testimonial-name">Мартин Иванов</div>
-            </div>
-            <!--END OF TESTIMONIAL 4 -->
-            <!--TESTIMONIAL 5 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img src="MAT-SMART_Logo--green.svg" id="testimonials-logo" alt="лого на компанията">
-                <p>Тук трябва да има примерен отзив от клиент, описващ дали е доволен или не от услугите на фирмата. 
-                  Под него има името на клиента, оставил отзива, а над него логото на фирмата.</p>
-              </div>
-              <div class="testimonial-name">Мартин Иванов</div>
-            </div>
-            <!--END OF TESTIMONIAL 5 -->
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-    <!-- END OF TESTIMONIALS -->
+    <!-- Contacts Section -->
+<div class="contact_form_div">
+  <div class="contact_form_container">
+          <h3 class="heading">Връзка с нас</h3>
 
-  
+          <div class="main_content">
+
+              <div class="left">
+                  <form onsubmit="reset(); return false;" action="#">
+
+                      <div class="form_input_wraper">
+                          <input type="text" id="name" name="name" required>
+                          <label for="name">Име</label>
+                      </div>
+
+                      <div class="form_input_wraper">
+                          <input type="text" id="subject" name="subject" required>
+                          <label for="subject">Причина за контакт</label>
+                      </div>
+
+                      <div class="form_input_wraper">
+                          <input type="text" id="email" name="email" required>
+                          <label for="email">Email</label>
+                      </div>
+
+                      <div class="form_input_wraper">
+                          <textarea id="message" name="message" required></textarea>
+                          <label for="message">Съобщение</label>
+                      </div>
+
+                      <button type="submit" aria-label="Submit Button" class="submit_button">
+                          <i class="fa fa-angle-right"></i>
+                      </button>
+                  </form>
+              </div>
+
+              <div class="right">
+                  <ul>
+                      <li>
+                          <span class="icon">
+                              <i class="fa fa-phone"></i>
+                          </span>
+                          <span class="text">+506 9999 9999</span>
+                      </li>
+                      <li>
+                          <span class="icon">
+                              <i class="fa fa-envelope"></i>
+                          </span>
+                          <span class="text">
+                              имейл на компанията
+                          </span>
+                      </li>
+                      <li>
+                          <span class="icon">
+                              <i class="fa fa-location-arrow"></i>
+                          </span>
+                          <span class="text">
+                              адрес на компанията
+                          </span>
+                      </li>
+                  </ul>
+              </div>
+
+          </div>
+      </div>
+</div>
 
   <!-- Footer Section -->
   <div class="footer__container">
@@ -285,6 +288,7 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="app.js"></script>
 </body>
 
