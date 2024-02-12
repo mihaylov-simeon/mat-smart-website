@@ -22,7 +22,6 @@ The Company Website for MAT-SMART Engineering aims to provide a professional and
 - About Page: Detailed information about the company, its history, mission, and team.
 - Services Page: Overview of the services offered by the company, with detailed descriptions.
 - Partners: The partners of the company with logos.
-- Testimonials: Client testimonials regarding the company's services.
 - Contact Page: Contact form and information for visitors to get in touch with the company.
 
 ## Built With
