@@ -755,7 +755,7 @@
 .shadow-effect {
   background: #fff;
   padding: 20px;
-  border-radius: 4px;
+  border-radius: 10px;
   text-align: center;
   border: 1px solid #ECECEC;
   box-shadow: 0 15px 30px rgba(0,0,0,0.10), 0 10px 10px rgba(0,0,0,0.02);
@@ -768,6 +768,7 @@
   margin: 0 0 17px 0;
   font-weight: 300;
 }
+
 .testimonial-name {
   margin: -17px auto 0;
   display: table;
@@ -775,7 +776,7 @@
   background: #008F11;
   background: -webkit-linear-gradient(to right, #008F11, #005a0b);
   background: linear-gradient(to right, #008F11, #005a0b);  padding: 9px 35px;
-  border-radius: 12px;
+  border-radius: 19px;
   text-align: center;
   color: #fff;
   font-weight: bold;
@@ -785,7 +786,7 @@
   text-align: center;
   padding: 50px;
   margin-bottom:80px;
-  opacity: .2;
+  opacity: .3;
   -webkit-transform: scale3d(0.8, 0.8, 1);
   transform: scale3d(0.8, 0.8, 1);
   -webkit-transition: all 0.3s ease-in-out;
