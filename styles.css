@@ -886,6 +886,12 @@
   border-radius: 10px;
 }
 
+.contact_form_container .main_content .left .submit_button:hover {
+  background: #000000;
+  color: #fff;
+}
+
+
 /* Media Query for smaller screens */
 @media screen and (max-width: 550px) {
   .contact_form_container .main_content {
