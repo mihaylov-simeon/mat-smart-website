@@ -1023,7 +1023,7 @@
 }
 
 .footer__link--items a:hover {
-  color: #777777;
+  color: #008F11;
   transition: 0.3 ease-out;
 }
 
@@ -1051,6 +1051,10 @@
   align-items: center;
   width: 150px;
   margin-left: 2.5rem;
+}
+
+body > div.footer__container > section > div > div.social__icons i:hover {
+  color: #008F11;
 }
 
 .website__rights {
