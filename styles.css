@@ -574,7 +574,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 30px;
-  max-width: 80%;
+  max-width: 70%;
 }
 
 .services__card {
@@ -593,6 +593,7 @@
   background-color: #ececec;
   transform: scale(1.03);
   transition: 0.5s;
+  border: 3px solid #008F11;
 }
 
 .services__btn button {
@@ -627,11 +628,12 @@
 .services p {
   color: #000000;
   margin-bottom: 30px;
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 1300px) {
   .services__wrapper {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
