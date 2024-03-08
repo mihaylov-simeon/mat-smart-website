@@ -587,6 +587,7 @@
   border-radius: 10px;
   transition: 1s;
   padding: 30px;
+  margin: 0 auto;
 }
 
 .services__card:hover {
@@ -640,6 +641,12 @@
 @media screen and (max-width: 840px) {
   .services__wrapper {
     grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: 500px) {
+    .services {
+      padding: 50px 0;
+    }
   }
 }
 
