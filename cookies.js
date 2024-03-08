@@ -31,7 +31,7 @@ btz_cookie_popup_css.innerHTML = `
 
 #btz-cookie-popup {
   position: fixed !important;
-  bottom: 13vh !important;
+  bottom: 15vh !important;
   right: 0 !important;
   z-index: 9999 !important;
   font-family: "Open Sans", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
