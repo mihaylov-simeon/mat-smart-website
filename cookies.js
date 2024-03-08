@@ -39,7 +39,7 @@ btz_cookie_popup_css.innerHTML = `
 
 #btz-cookie-popup .btz-cookie-popup__card {
   background: rgb(0,78,200);
-  background: linear-gradient(90deg, rgba(0,143,17, 0.9) 0%, rgba(0,102,0,0.7) 100%);
+  background: linear-gradient(90deg, rgba(0,143,17, 0.9) 0%, rgba(0,102,0,0.8) 100%);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.2) !important;
   border-radius: 10px;
   display: flex !important;
@@ -53,12 +53,12 @@ btz_cookie_popup_css.innerHTML = `
 
 #btz-cookie-popup .btz-cookie-popup--closed {
   -webkit-animation: btz-cookie-popup--close 0.4s ease-in-out forwards !important;
-          animation: btz-cookie-popup--close 0.4s ease-in-out forwards !important;
+  animation: btz-cookie-popup--close 0.4s ease-in-out forwards !important;
 }
 
 #btz-cookie-popup .btz-cookie-popup--opened {
   -webkit-animation: btz-cookie-popup--open 0.4s ease-in-out forwards !important;
-          animation: btz-cookie-popup--open 0.4s ease-in-out forwards !important;
+  animation: btz-cookie-popup--open 0.4s ease-in-out forwards !important;
 }
 
 #btz-cookie-popup .btz-cookie-popup__content {
@@ -152,19 +152,14 @@ btz_cookie_popup_css.innerHTML = `
 @keyframes btz-cookie-popup--close {
   0% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  20% {
-    -webkit-transform: scale(0.9, 1.1);
-            transform: scale(0.9, 1.1);
+    transform: translateX(0);
   }
   100% {
     opacity: 0;
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: translateX(100%);
   }
 }
+
 @-webkit-keyframes btz-cookie-popup--open {
   0% {
     opacity: 0;
@@ -181,20 +176,14 @@ btz_cookie_popup_css.innerHTML = `
             transform: scale(1);
   }
 }
-@keyframes btz-cookie-popup__open {
+@keyframes btz-cookie-popup--open {
   0% {
     opacity: 0;
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  80% {
-    -webkit-transform: scale(0.9, 1.1);
-            transform: scale(0.9, 1.1);
+    transform: translateX(100%);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: translateX(0);
   }
 }
 `;
