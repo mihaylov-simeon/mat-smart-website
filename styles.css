@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -213,7 +211,7 @@
 
 /* Hero Section */
 .hero {
-  background-image: url('https://cdn.mos.cms.futurecdn.net/steVjWGx3vYPjMpJL2jVcV.jpg'); /* Replace 'your-image-url.jpg' with the URL of your image */
+  background-image: url('https://cdn.mos.cms.futurecdn.net/steVjWGx3vYPjMpJL2jVcV.jpg'); 
   background-size: cover;
   background-position: center;
   padding: 100px 0;
@@ -227,11 +225,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.7); /* Adjust the opacity here (0 is fully transparent, 1 is fully opaque) */
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .hero__container {
-  position: relative; /* Ensure the container is positioned relative to the overlay */
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -280,21 +278,21 @@
 
 @media screen and (max-width: 768px) {
   .hero__heading {
-    font-size: 4rem; /* Adjust font size for smaller screens */
+    font-size: 4rem;
   }
 
   .hero__description {
-    font-size: 2rem; /* Adjust font size for smaller screens */
+    font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .hero__heading {
-    font-size: 3rem; /* Further adjust font size for even smaller screens */
+    font-size: 3rem;
   }
 
   .hero__description {
-    font-size: 1.5rem; /* Further adjust font size for even smaller screens */
+    font-size: 1.5rem;
   }
 }
 
