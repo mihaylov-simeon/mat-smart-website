@@ -60,6 +60,14 @@
   width: 100%;
 }
 
+.navbar__btn.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
 .button {
   display: flex;
   justify-content: center;

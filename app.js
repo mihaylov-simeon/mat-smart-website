@@ -2,7 +2,7 @@ const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#company-logo');
 const topBtn = document.querySelector('#topBtn');
-const navBarBtn = document.querySelector("#contacts-page")
+const navBarBtn = document.querySelector("#contacts-page");
 
 // Disable right-clicking and dragging
 document.addEventListener('contextmenu', function(e) {
@@ -17,76 +17,82 @@ document.addEventListener('selectstart', function(e) {
   e.preventDefault();
 });
 
-// Display Mobile Menu
-const mobileMenu = () => {
-  menu.classList.toggle('is-active');
-  menuLinks.classList.toggle('active');
-  navBarBtn.classList.toggle('isactive');
-};
-
-menu.addEventListener('click', mobileMenu);
-
-// Show active menu when scrolling
-const highlightMenu = () => {
-  const element = document.querySelector('.highlight');
-  const scrollPosition = window.scrollY;
-  const homeMenu = document.querySelector('#home-page');
-  const aboutMenu = document.querySelector('#about-page');
-  const servicesMenu = document.querySelector('#services-page');
-  const partnersMenu = document.querySelector('#partners-page');
-
-  if (window.innerWidth > 960 && scrollPosition < 500) {
-    homeMenu.classList.add('highlight');
-    [aboutMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
-  } else if (window.innerWidth > 960 && scrollPosition < 1200) {
-    aboutMenu.classList.add('highlight');
-    [homeMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
-  } else if (window.innerWidth > 960 && scrollPosition < 2000) {
-    servicesMenu.classList.add('highlight');
-    [homeMenu, aboutMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
-  } else if (window.innerWidth > 960 && scrollPosition < 2500) {
-    partnersMenu.classList.add('highlight');
-    [homeMenu, aboutMenu, servicesMenu].forEach(item => item.classList.remove('highlight'));
-  } else {
-    if (element && window.innerWidth < 960 && scrollPosition < 600) {
-      element.classList.remove('highlight');
-    }
-  }
-};
-
-window.addEventListener('scroll', highlightMenu);
-window.addEventListener('click', highlightMenu);
-
-// Close mobile menu when clicking on a menu item
-const hideMenu = () => {
-  if (window.innerWidth < 960) {
-    menu.classList.remove('is-active');
-    menuLinks.classList.remove('active');
-    navBarBtn.classList.remove('is-active');
-  }
-};
-
-const menuItems = document.querySelectorAll('.navbar__links');
-menuItems.forEach(item => {
-  item.addEventListener('click', hideMenu);
-});
-
-navBarBtn.addEventListener('click', hideMenu);
-
-// Explore our services button clickable
 document.addEventListener('DOMContentLoaded', function() {
+
+  window.history.replaceState({}, document.title, window.location.pathname);
+
+  // Display Mobile Menu
+  const mobileMenu = () => {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+    navBarBtn.classList.toggle('active');
+  };
+
+  menu.addEventListener('click', mobileMenu);
+
+  // Show active menu when scrolling
+  const highlightMenu = () => {
+    const element = document.querySelector('.highlight');
+    const scrollPosition = window.scrollY;
+    const homeMenu = document.querySelector('#home-page');
+    const aboutMenu = document.querySelector('#about-page');
+    const servicesMenu = document.querySelector('#services-page');
+    const partnersMenu = document.querySelector('#partners-page');
+
+    [homeMenu, aboutMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
+  
+    if (window.innerWidth > 960 && scrollPosition < 500) {
+      homeMenu.classList.add('highlight');
+      [aboutMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
+    } else if (window.innerWidth > 960 && scrollPosition < 1300) {
+      aboutMenu.classList.add('highlight');
+      [homeMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
+    } else if (window.innerWidth > 960 && scrollPosition < 2600) {
+      servicesMenu.classList.add('highlight');
+      [homeMenu, aboutMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
+    } else if (window.innerWidth > 960 && scrollPosition < 2500) {
+      partnersMenu.classList.add('highlight');
+      [homeMenu, aboutMenu, servicesMenu].forEach(item => item.classList.remove('highlight'));
+    } else if (window.innerWidth > 960 && scrollPosition >= 2500) { // Adjusted condition
+      partnersMenu.classList.add('highlight');
+      [homeMenu, aboutMenu, servicesMenu].forEach(item => item.classList.remove('highlight'));
+    } else {
+      if (element && window.innerWidth < 960 && scrollPosition < 600) {
+        [homeMenu, aboutMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
+      }
+    }
+  };
+  
+
+  window.addEventListener('scroll', highlightMenu);
+  window.addEventListener('click', highlightMenu);
+
+  // Close mobile menu when clicking on a menu item
+  const hideMenu = () => {
+    if (menu.classList.contains('is-active')) {
+      menu.classList.remove('is-active');
+      menuLinks.classList.remove('active');
+      navBarBtn.classList.remove('active');
+    }
+  };
+
+  const menuItems = document.querySelectorAll('.navbar__links');
+  menuItems.forEach(item => {
+    item.addEventListener('click', hideMenu);
+  });
+
+  navBarBtn.addEventListener('click', hideMenu);
+
+  // Explore our services button clickable
   const exploreServicesBtn = document.querySelector('.main__btn');
 
   exploreServicesBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    // Validate and sanitize URL input before setting it
     const url = '#services';
     window.location.href = url;
   });
+
 });
-
-// ================================== SCROLL FUNCTIONS ==================================
-
 // Scroll Tracker
 const scrollBarTracker = () => {
   const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -119,7 +125,7 @@ function topFunction() {
 topBtn.addEventListener('click', topFunction);
 
 // call functions on scroll
-window.onscroll = function () {
+window.addEventListener('scroll', function () {
   scrollFunction();
   scrollBarTracker();
-};
+});
