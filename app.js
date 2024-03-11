@@ -2,6 +2,7 @@ const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#company-logo');
 const topBtn = document.querySelector('#topBtn');
+const navBarBtn = document.querySelector("#contacts-page")
 
 // Disable right-clicking and dragging
 document.addEventListener('contextmenu', function(e) {
@@ -20,6 +21,7 @@ document.addEventListener('selectstart', function(e) {
 const mobileMenu = () => {
   menu.classList.toggle('is-active');
   menuLinks.classList.toggle('active');
+  navBarBtn.classList.toggle('isactive');
 };
 
 menu.addEventListener('click', mobileMenu);
@@ -60,6 +62,7 @@ const hideMenu = () => {
   if (window.innerWidth < 960) {
     menu.classList.remove('is-active');
     menuLinks.classList.remove('active');
+    navBarBtn.classList.remove('is-active');
   }
 };
 
@@ -67,6 +70,8 @@ const menuItems = document.querySelectorAll('.navbar__links');
 menuItems.forEach(item => {
   item.addEventListener('click', hideMenu);
 });
+
+navBarBtn.addEventListener('click', hideMenu);
 
 // Explore our services button clickable
 document.addEventListener('DOMContentLoaded', function() {
