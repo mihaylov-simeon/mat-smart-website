@@ -1,25 +1,22 @@
-const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.navbar__menu');
-const navLogo = document.querySelector('#company-logo');
-const topBtn = document.querySelector('#topBtn');
-const navBarBtn = document.querySelector("#contacts-page");
-
-// Disable right-clicking and dragging
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-});
-
-document.addEventListener('dragstart', function(e) {
-  e.preventDefault();
-});
-
-document.addEventListener('selectstart', function(e) {
-  e.preventDefault();
-});
-
 document.addEventListener('DOMContentLoaded', function() {
+  const menu = document.querySelector('#mobile-menu');
+  const menuLinks = document.querySelector('.navbar__menu');
+  const navLogo = document.querySelector('#company-logo');
+  const topBtn = document.querySelector('#topBtn');
+  const navBarBtn = document.querySelector("#contacts-page");
 
-  window.history.replaceState({}, document.title, window.location.pathname);
+  // Disable right-clicking and dragging
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+  });
 
   // Display Mobile Menu
   const mobileMenu = () => {
@@ -32,37 +29,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Show active menu when scrolling
   const highlightMenu = () => {
-    const element = document.querySelector('.highlight');
     const scrollPosition = window.scrollY;
     const homeMenu = document.querySelector('#home-page');
     const aboutMenu = document.querySelector('#about-page');
     const servicesMenu = document.querySelector('#services-page');
     const partnersMenu = document.querySelector('#partners-page');
+    const windowWidth = window.innerWidth;
 
-    [homeMenu, aboutMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
-  
-    if (window.innerWidth > 960 && scrollPosition < 500) {
-      homeMenu.classList.add('highlight');
-      [aboutMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
-    } else if (window.innerWidth > 960 && scrollPosition < 1300) {
-      aboutMenu.classList.add('highlight');
-      [homeMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
-    } else if (window.innerWidth > 960 && scrollPosition < 2600) {
-      servicesMenu.classList.add('highlight');
-      [homeMenu, aboutMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
-    } else if (window.innerWidth > 960 && scrollPosition < 2500) {
-      partnersMenu.classList.add('highlight');
-      [homeMenu, aboutMenu, servicesMenu].forEach(item => item.classList.remove('highlight'));
-    } else if (window.innerWidth > 960 && scrollPosition >= 2500) { // Adjusted condition
-      partnersMenu.classList.add('highlight');
-      [homeMenu, aboutMenu, servicesMenu].forEach(item => item.classList.remove('highlight'));
+    const removeHighlight = (menus) => {
+      menus.forEach(item => item.classList.remove('highlight'));
+    };
+
+    if (windowWidth > 960) {
+      if (scrollPosition < 500) {
+        homeMenu.classList.add('highlight');
+        removeHighlight([aboutMenu, servicesMenu, partnersMenu]);
+      } else if (scrollPosition < 1300) {
+        aboutMenu.classList.add('highlight');
+        removeHighlight([homeMenu, servicesMenu, partnersMenu]);
+      } else if (scrollPosition < 2300) {
+        servicesMenu.classList.add('highlight');
+        removeHighlight([homeMenu, aboutMenu, partnersMenu]);
+      } else if (scrollPosition < 2400) {
+        partnersMenu.classList.add('highlight');
+        removeHighlight([homeMenu, aboutMenu, servicesMenu]);
+      } else {
+        partnersMenu.classList.add('highlight'); // Adjusted condition
+        removeHighlight([homeMenu, aboutMenu, servicesMenu]);
+      }
     } else {
-      if (element && window.innerWidth < 960 && scrollPosition < 600) {
-        [homeMenu, aboutMenu, servicesMenu, partnersMenu].forEach(item => item.classList.remove('highlight'));
+      if (scrollPosition < 600) {
+        removeHighlight([homeMenu, aboutMenu, servicesMenu, partnersMenu]);
       }
     }
   };
-  
 
   window.addEventListener('scroll', highlightMenu);
   window.addEventListener('click', highlightMenu);
@@ -92,40 +92,46 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = url;
   });
 
-});
-// Scroll Tracker
-const scrollBarTracker = () => {
-  const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  document.getElementById("my__bar").style.width = `${scrolled}%`;
-};
+  // Scroll Tracker
+  const scrollBarTracker = () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("my__bar").style.width = `${scrolled}%`;
+  };
 
-window.addEventListener('scroll', scrollBarTracker);
+  window.addEventListener('scroll', scrollBarTracker);
 
-// When the user scrolls down 1500px from the top of the document, show the button
-function scrollFunction() {
-  if (document.body.scrollTop > 1700 || document.documentElement.scrollTop > 1700) {
-    topBtn.style.display = "block";
-  } else {
-    topBtn.style.display = "none";
+  // When the user scrolls down 1500px from the top of the document, show the button
+  function scrollFunction() {
+    if (document.body.scrollTop > 1700 || document.documentElement.scrollTop > 1700) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
   }
-}
 
-// Back to top function
-function topFunction() {
-  // Smoothly scroll to the top of the document
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+  // Back to top function
+  function topFunction() {
+    // Smoothly scroll to the top of the document
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  // Add click event listener to topBtn
+  topBtn.addEventListener('click', topFunction);
+
+  // call functions on scroll
+  window.addEventListener('scroll', function () {
+    scrollFunction();
+    scrollBarTracker();
+    highlightMenu();
   });
-}
 
-// Add click event listener to topBtn
-topBtn.addEventListener('click', topFunction);
-
-// call functions on scroll
-window.addEventListener('scroll', function () {
-  scrollFunction();
-  scrollBarTracker();
+  // Implement Lazy Loading for Images
+  document.querySelectorAll('img').forEach(img => {
+    img.setAttribute('loading', 'lazy');
+  });
 });
