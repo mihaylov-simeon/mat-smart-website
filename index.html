@@ -167,27 +167,27 @@
           <h3 class="heading">Връзка с нас</h3>
           <div class="main_content">
               <div class="left">
-                  <form onsubmit="reset(); return false;" action="#">
-                      <div class="form_input_wraper">
-                          <input type="text" id="name" name="name" required>
-                          <label for="name">Име</label>
-                      </div>
-                      <div class="form_input_wraper">
-                          <input type="text" id="subject" name="subject" required>
-                          <label for="subject">Причина за контакт</label>
-                      </div>
-                      <div class="form_input_wraper">
-                          <input type="text" id="email" name="email" required>
-                          <label for="email">Email</label>
-                      </div>
-                      <div class="form_input_wraper">
-                          <textarea id="message" name="message" required></textarea>
-                          <label for="message">Съобщение</label>
-                      </div>
-                      <button type="submit" aria-label="Submit Button" class="submit_button">
-                          <i class="fa fa-angle-right"></i>
-                      </button>
-                  </form>
+                <form id="contact-form" action="#">
+                  <div class="form_input_wraper">
+                      <input type="text" id="name" name="name" required>
+                      <label for="name">Име</label>
+                  </div>
+                  <div class="form_input_wraper">
+                      <input type="text" id="subject" name="subject" required>
+                      <label for="subject">Причина за контакт</label>
+                  </div>
+                  <div class="form_input_wraper">
+                      <input type="email" id="email" name="email" required>
+                      <label for="email">Email</label>
+                  </div>
+                  <div class="form_input_wraper">
+                      <textarea id="message" name="message" required></textarea>
+                      <label for="message">Съобщение</label>
+                  </div>
+                  <button type="submit" aria-label="Submit Button" class="submit_button">
+                      <i class="fa fa-angle-right"></i>
+                  </button>
+                </form>                
               </div>
               <div class="right">
                   <ul>
@@ -253,5 +253,5 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="app.js"></script>
   <script src="cookies.js"></script>
-</body>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script></body>
 </html>

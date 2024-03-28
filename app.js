@@ -134,4 +134,37 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(img => {
     img.setAttribute('loading', 'lazy');
   });
+
+  emailjs.init("4jDQ_CIUxXvEzKwIB");
+
+  const contactForm = document.querySelector("#contact-form");
+  
+  contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      console.log('Form submitted!');
+      
+      // Get the form data
+      const formData = {
+        name: document.getElementById('name').value,
+        subject: document.getElementById('subject').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+      
+      console.log("Form Data:", formData);
+  
+      // Send the form data using EmailJS
+      emailjs.send("service_i2ou9ou", "template_kv6vn1w", formData)
+          .then(function(response) {
+              console.log('Email sent successfully:', response);
+              // Optionally, display a success message or redirect the user
+          }, function(error) {
+              console.error('Email sending failed:', error);
+              // Optionally, display an error message to the user
+          });
+  
+      // Reset the form after submission
+      contactForm.reset();
+  });
+  
 });
