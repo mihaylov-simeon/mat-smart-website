@@ -132,41 +132,27 @@ document.addEventListener('DOMContentLoaded', function() {
     img.setAttribute('loading', 'lazy');
   });
 
-  let formData;
+const contactForm = document.querySelector("#contact-form");
 
-  // Contact form EmailJS initialization
-  var _0x78b7 = ["\x34\x6A\x44\x51\x5F\x43\x49\x55\x78\x58\x76\x45\x7A\x4B\x77\x49\x42"];
-  var apiKey = "";
-  for (var _0x2f96c5 = 0x0; _0x2f96c5 < _0x78b7.length; _0x2f96c5++) {
-      apiKey += _0x78b7[_0x2f96c5];
-  }
-  emailjs.init(apiKey);
-
-  const contactForm = document.querySelector("#contact-form");
-
-  contactForm.addEventListener('submit', function(event) {
+contactForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    console.log('Form submitted!');
 
-    formData = {
-        name: document.getElementById('name').value,
-        subject: document.getElementById('subject').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
+    const formData = new FormData(contactForm);
 
-    console.log("Form Data:", formData);
-
-    // Send the form data using EmailJS
-    emailjs.send("service_i2ou9ou", "template_kv6vn1w", formData)
-        .then(function(response) {
-            console.log('Email sent successfully:', response);
-        }, function(error) {
-            console.error('Email sending failed:', error);
-        });
-
-    contactForm.reset();
-  });
+    fetch(contactForm.getAttribute('action'), {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); // Display the response message
+        contactForm.reset(); // Reset the form after submission
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again later.');
+    });
+});
 });
 
 function topFunction() {

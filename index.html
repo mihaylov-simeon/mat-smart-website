@@ -145,13 +145,13 @@
   </section>
   
 
-    <!-- Contacts Section -->
+<!-- Contacts Section -->
 <div class="contact_form_div" id="contact-us">
   <div class="contact_form_container">
           <h3 class="heading">Връзка с нас</h3>
           <div class="main_content">
               <div class="left">
-                <form id="contact-form" action="#">
+                <form id="contact-form" action="send_email.php" method="post">
                   <div class="form_input_wraper">
                       <input type="text" id="name" name="name" required>
                       <label for="name">Име</label>
@@ -237,5 +237,6 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="app.js"></script>
   <script src="cookies.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script></body>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+</body>
 </html>
