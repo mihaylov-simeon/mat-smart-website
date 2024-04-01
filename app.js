@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   navLogo.addEventListener('click', function() {
     topFunction();
+
+    if (window.location.hash) {
+      window.location.href = window.location.hash.split('#')[0];
+    };
   });
 
   // Disable right-clicking and dragging
@@ -44,12 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const partnersMenu = document.querySelector('#partners-page');
     const windowWidth = window.innerWidth;
 
-    // 
     const removeHighlight = (menu) => {
       menu.forEach(item => item.classList.remove('highlight'));
     };
 
-    // Setup highlighting on specific scroll positions
     if (windowWidth > 960) {
       if (scrollPosition < 500) {
         homeMenu.classList.add('highlight');
@@ -86,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // Close mobile menu when clicking on a menu item
   const menuItems = document.querySelectorAll('.navbar__links');
   menuItems.forEach(item => {
     item.addEventListener('click', hideMenu);
@@ -113,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addEventListener('scroll', scrollBarTracker);
 
-  // When the user scrolls down 1500px from the top of the document, show the button
   function scrollFunction() {
     if (document.body.scrollTop > 1700 || document.documentElement.scrollTop > 1700) {
       topBtn.style.display = "block";
@@ -122,56 +122,62 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // functions on scroll
   window.addEventListener('scroll', function () {
     scrollFunction();
     scrollBarTracker();
     highlightMenu();
   });
 
-  // Lazy Loading for Images
   document.querySelectorAll('img').forEach(img => {
     img.setAttribute('loading', 'lazy');
   });
 
+  let formData;
+
   // Contact form EmailJS initialization
-  emailjs.init("4jDQ_CIUxXvEzKwIB");
+  var _0x78b7 = ["\x34\x6A\x44\x51\x5F\x43\x49\x55\x78\x58\x76\x45\x7A\x4B\x77\x49\x42"];
+  var apiKey = "";
+  for (var _0x2f96c5 = 0x0; _0x2f96c5 < _0x78b7.length; _0x2f96c5++) {
+      apiKey += _0x78b7[_0x2f96c5];
+  }
+  emailjs.init(apiKey);
 
   const contactForm = document.querySelector("#contact-form");
-  
+
   contactForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      console.log('Form submitted!');
-      
-      const formData = {
+    event.preventDefault();
+    console.log('Form submitted!');
+
+    formData = {
         name: document.getElementById('name').value,
         subject: document.getElementById('subject').value,
         email: document.getElementById('email').value,
         message: document.getElementById('message').value
     };
-      
-      console.log("Form Data:", formData);
-  
-      // Send the form data using EmailJS
-      emailjs.send("service_i2ou9ou", "template_kv6vn1w", formData)
-          .then(function(response) {
-              console.log('Email sent successfully:', response);
-          }, function(error) {
-              console.error('Email sending failed:', error);
-          });
-  
-      contactForm.reset();
+
+    console.log("Form Data:", formData);
+
+    // Send the form data using EmailJS
+    emailjs.send("service_i2ou9ou", "template_kv6vn1w", formData)
+        .then(function(response) {
+            console.log('Email sent successfully:', response);
+        }, function(error) {
+            console.error('Email sending failed:', error);
+        });
+
+    contactForm.reset();
   });
-  
 });
 
-  // Back to top function
-  function topFunction() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
+function topFunction() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+  if (window.location.hash) {
+    window.location.href = window.location.hash.split('#')[0];
+  };
+};
 
 topBtn.addEventListener('click', topFunction);
-
