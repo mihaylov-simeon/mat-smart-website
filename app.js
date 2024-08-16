@@ -56,19 +56,19 @@ document.addEventListener('DOMContentLoaded', function() {
       if (scrollPosition < 500) {
         homeMenu.classList.add('highlight');
         removeHighlight([aboutMenu, servicesMenu, partnersMenu]);
-      } else if (scrollPosition < 1300) {
+      } else if (scrollPosition < 980) {
         aboutMenu.classList.add('highlight');
         removeHighlight([homeMenu, servicesMenu, partnersMenu]);
-      } else if (scrollPosition < 2300) {
+      } else if (scrollPosition < 1800) {
         servicesMenu.classList.add('highlight');
         removeHighlight([homeMenu, aboutMenu, partnersMenu]);
-      } else if (scrollPosition < 2400) {
+      } else if (scrollPosition < 3000) {
         partnersMenu.classList.add('highlight');
         removeHighlight([homeMenu, aboutMenu, servicesMenu]);
       } else {
-        partnersMenu.classList.add('highlight');
-        removeHighlight([homeMenu, aboutMenu, servicesMenu]);
+        removeHighlight([ partnersMenu ]);
       }
+
     } else {
       if (scrollPosition < 600) {
         removeHighlight([homeMenu, aboutMenu, servicesMenu, partnersMenu]);
