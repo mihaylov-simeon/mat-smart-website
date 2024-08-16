@@ -1051,10 +1051,6 @@ body > div.footer__container > section > div > div.social__icons i:hover {
   text-decoration: none;
 }
 
-.website__rights:hover {
-  color: #008F11;
-}
-
 @media screen and (max-width: 820px) {
   .footer__links {
     padding-top: 2rem;
