@@ -3,3 +3,4 @@ Disallow: /app.js
 Disallow: /cookies.js
 Disallow: /styles.css
 Disallow: /Условия-за-ползване.pdf
+Sitemap: https://matsmart.bg/sitemap.xml
