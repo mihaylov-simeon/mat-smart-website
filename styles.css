@@ -1048,6 +1048,11 @@ body > div.footer__container > section > div > div.social__icons i:hover {
   position: absolute;
   bottom: 1rem;
   text-align: center;
+  text-decoration: none;
+}
+
+.website__rights:hover {
+  color: #008F11;
 }
 
 @media screen and (max-width: 820px) {
